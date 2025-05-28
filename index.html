@@ -12,7 +12,6 @@
     <section>
         <h2>🌐 IP cím lekérdezése</h2>
         <p><a href="https://whatismyipaddress.com/" target="_blank">Mi az IP címem?</a></p>
-        <h3>CMD-ben(Command-line)</h3>
     </section>
 
     <section>
@@ -44,56 +43,56 @@ CMD → cls -- clean screen
         <p>Fájlok és mappák létrehozása parancssorban CMD</p>
         <pre>
         <h3>Mappa</h3>
-            📁Mappa tartalmának a listázása: dir (directory)
-            📁Mappa létrehozása: mkdir "mappa neve" (make directory)
-            📁Belépés a mappába: cd vagy chdir "mappa neve" (change directory)
-            📁Mappa átnevezése: ren old.txt new.txt
-            echo "szöveg bármi" > "file.txt" felülír egy adott tartalmat
-            echo "szöveg bármi" >> "file.txt" meglévő tartalom marad ha van, de új kreált sort hozzáfűzi a végéhez
-            🧹Mappa törlése rekurzívan és megerősítés nélkül: rmdir vagy rd /s /q
-            🧹file törlése: del
-            file másolása: copy "másolandó" "új mappa/txt" ; összes txt másolása - copy *.txt backup\
-            file vagy mappa áthelyezése: move "file elérése" "másik mappa"\
+📁Mappa tartalmának a listázása: dir (directory)
+📁Mappa létrehozása: mkdir "mappa neve" (make directory)
+📁Belépés a mappába: cd vagy chdir "mappa neve" (change directory)
+📁Mappa átnevezése: ren old.txt new.txt
+echo "szöveg bármi" > "file.txt" felülír egy adott tartalmat
+echo "szöveg bármi" >> "file.txt" meglévő tartalom marad ha van, de új kreált sort hozzáfűzi a végéhez
+🧹Mappa törlése rekurzívan és megerősítés nélkül: rmdir vagy rd /s /q
+🧹fájl törlése: del
+fájl másolása: copy "másolandó" "új mappa/txt" ; összes txt másolása - copy *.txt backup\
+fájl vagy mappa áthelyezése: move "file elérése" "másik mappa"\
         </pre>
     </section>
     <section>
      <h2>CMD-ben(Command-line) Hálózati parancsok</h2>
         <pre>
-            ipconfig: hálózati tulajdonságok; ipconfig/all: az összes tulajdonság megjelenítése
-            ping: kapcsolat tesztelése pl. ip címek, vagy DNS alapján google: 8.8.8.8
-            tracert: útvonal megjelenítése pl: tracert google.com, mutatja, hogy a router mennyi útvonalon éri el az adott célt.
-            nslookup: Name Server Lookup - nslookup google.com - milyen IP-n van a google? vagy fordított keresés - ns lookup 8.8.8.8 - melyik domain tartozik az ip-hez?
-            nslookup használata: DNS-server tesztelése és hibelhárítás ha nem tölt be egy weboldal
-            ipconfig/release: IP-cím felszabadítása
-            ipconfig/renew: új IP-cím kérése a DHCP-től
-            net use: hálózati meghajtók csatlakozását, listázását vagy lecsatolását kezeli.
-            Pl: net use Z: \\szerver\megosztaso -- hálózati meghajtó csatlakozása
-            Pl: net use Z: /delete hálózati -- meghajtó lecsatolása
-            Pl: net use Z: \\szerver\megosztas /user:domain\felhasznalo jelszo -- hitelesítés megadása
+ipconfig: hálózati tulajdonságok; ipconfig/all: az összes tulajdonság megjelenítése
+ping: kapcsolat tesztelése pl. ip címek, vagy DNS alapján google: 8.8.8.8
+tracert: útvonal megjelenítése pl: tracert google.com, mutatja, hogy a router mennyi útvonalon éri el az adott célt.
+nslookup: Name Server Lookup - nslookup google.com - milyen IP-n van a google? vagy fordított keresés - ns lookup 8.8.8.8 - melyik domain tartozik az ip-hez?
+nslookup használata: DNS-server tesztelése és hibelhárítás ha nem tölt be egy weboldal
+ipconfig/release: IP-cím felszabadítása
+ipconfig/renew: új IP-cím kérése a DHCP-től
+net use: hálózati meghajtók csatlakozását, listázását vagy lecsatolását kezeli.
+    Pl: net use Z: \\szerver\megosztaso -- hálózati meghajtó csatlakozása
+    Pl: net use Z: /delete hálózati -- meghajtó lecsatolása
+    Pl: net use Z: \\szerver\megosztas /user:domain\felhasznalo jelszo -- hitelesítés megadása
         </pre>
     </section>
     <section>
         <h2>Rendszer és karbantartó parancsok(CMD)</h2>
         <pre>
-            sfc/scannow: rendszerfájl ellenőrzése 
-            chkdsk C: : Meghajtó ellenőrzése, hibajavítás
-            tasklist: folyamatok listázása
-            taskkil: folyamat leállítása Pl: taskkill /IM notepad.exe / F
-            shutdown: gép leállítása Pl: shutdown /r /t /0
-            systeminfo: rendszeradatok
-            eventwvr: eseménynapló GUI felület
-            msconfig: indítási beállítások kezelése GUI
-            cleanmgr: lemezkarbantartó indítása
+sfc/scannow: rendszerfájl ellenőrzése 
+chkdsk C: : Meghajtó ellenőrzése, hibajavítás
+tasklist: folyamatok listázása
+taskkil: folyamat leállítása Pl: taskkill /IM notepad.exe / F
+shutdown: gép leállítása Pl: shutdown /r /t /0
+systeminfo: rendszeradatok
+eventwvr: eseménynapló GUI felület
+msconfig: indítási beállítások kezelése GUI
+cleanmgr: lemezkarbantartó indítása
             
         </pre>
     </section>
     <section>
         <h2>Felhasználói lekérdezések(CMD)</h2>
         <pre>
-            net user: felhasználók listázása
-            net user "felhasználó név": részletek adott user-ről
-            net user újnév újjelszó / add: új helyi felhasználó létrehozása Pl: net user helpdesk1 jelszo123 /add
-            net localgroup administrators helpdesk1 /add: adminisztrátori jogosultság adása
+net user: felhasználók listázása
+net user "felhasználó név": részletek adott user-ről
+net user újnév újjelszó / add: új helyi felhasználó létrehozása Pl: net user helpdesk1 jelszo123 /add
+net localgroup administrators helpdesk1 /add: adminisztrátori jogosultság adása
         </pre>
     </section>
 </body>
