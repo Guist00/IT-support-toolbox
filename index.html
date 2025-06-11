@@ -16,10 +16,10 @@ IP cím (Internet Protocol)-> egy eszköz kapja egy adott hálózaton kommuniká
                              IPV4 szabvány 32 bit(4byte)
                              Olyan mint egy házszám és utca neve
             
-MAC cím (Media Access Protocol) -> egyedi azononsító minden hálózati eszközön pl: Hálókártya
-                                   hossza 6 byte, az első 3 byte (OUI-gyártó azonosítója) Organizationally Unique Identifier
+MAC cím (Media Access Protocol) -> egyedi azonosító minden hálózati eszközön pl: Hálókártya
+                                   hossza: 6 byte, az első 3 byte (OUI-gyártó azonosítója) Organizationally Unique Identifier
                                    második 3 byte (eszköz egyedi száma gyártótól)
-                                   LSB-Least Significast Bit -> ha 0 unicast páros, ha 1 multicast páratlan
+                                   LSB-Least Significant Bit -> ha 0 unicast páros, ha 1 multicast páratlan
                                    Unicast: egyetlen postaládának szóló levél
                                    Multicast: több postaládának szóló egyszerre küldött levél, akiknek szól pl egy adott csoport eszköz
         </pre>
@@ -46,7 +46,7 @@ MAC cím (Media Access Protocol) -> egyedi azononsító minden hálózati eszkö
 Ctrl + Shift + Esc → Feladatkezelő  
 Win + R → Futtatás  
 Win + R cmd → Parancssor  
-Win + alt + del → felhasználó váltás
+Win + alt + del → felhasználóváltás
 CMD → cls  (clean screen)
         </pre>
     </section>
@@ -72,7 +72,7 @@ ipconfig: hálózati tulajdonságok; ipconfig/all: az összes tulajdonság megje
 ping: kapcsolat tesztelése pl. ip címek, vagy DNS alapján google: 8.8.8.8
 tracert: útvonal megjelenítése pl: tracert google.com, mutatja, hogy a router mennyi útvonalon éri el az adott célt.
 nslookup: Name Server Lookup - nslookup google.com - milyen IP-n van a google? vagy fordított keresés - ns lookup 8.8.8.8 - melyik domain tartozik az ip-hez?
-nslookup használata: DNS-server tesztelése és hibelhárítás ha nem tölt be egy weboldal
+nslookup használata: DNS-server tesztelése és hibaelhárítás ha nem tölt be egy weboldal
 ipconfig/release: IP-cím felszabadítása
 ipconfig/renew: új IP-cím kérése a DHCP-től
 net use: hálózati meghajtók csatlakozását, listázását vagy lecsatolását kezeli.
@@ -94,7 +94,7 @@ systeminfo: rendszeradatok
 eventwvr: eseménynapló GUI felület
 msconfig: indítási beállítások kezelése GUI
 cleanmgr: lemezkarbantartó indítása
-wind+r mrt: kártevő eltávolítás
+WIN + R, majd beírni -> mrt: kártevő eltávolítás
 
         </pre>
     </section>
@@ -103,7 +103,7 @@ wind+r mrt: kártevő eltávolítás
         <pre>
 net user: felhasználók listázása
 net user "felhasználó név": részletek adott user-ről
-net user újnév újjelszó / add: új helyi felhasználó létrehozása Pl: net user helpdesk1 jelszo123 /add
+net user újnév új jelszó / add: új helyi felhasználó létrehozása Pl: net user helpdesk1 jelszo123 /add
 net localgroup administrators helpdesk1 /add: adminisztrátori jogosultság adása
         </pre>
     </section>
