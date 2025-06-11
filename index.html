@@ -35,7 +35,7 @@ Ctrl + Shift + Esc → Feladatkezelő
 Win + R → Futtatás  
 Win + R cmd → Parancssor  
 Win + alt + del → felhasználó váltás
-CMD → cls -- clean screen
+CMD → cls  (clean screen)
         </pre>
     </section>
     <section>
@@ -72,7 +72,8 @@ net use: hálózati meghajtók csatlakozását, listázását vagy lecsatolásá
     <section>
         <h2>Rendszer és karbantartó parancsok(CMD)</h2>
         <pre>
-sfc/scannow: rendszerfájl ellenőrzése 
+sfc/scannow: windows rendszerfájlok ellenőrzése -> ha ez nem tudja megoldani, akkor DISM /online /Cleanup-image /restorehealth 
+sfc /scannow vagy DISM, akkor kell ha pl: program összeomlás, malware után, hibaüzenetek, fájlok sérülése, áramkimaradás
 chkdsk C: : Meghajtó ellenőrzése, hibajavítás
 tasklist: folyamatok listázása
 taskkil: folyamat leállítása Pl: taskkill /IM notepad.exe / F
@@ -81,6 +82,7 @@ systeminfo: rendszeradatok
 eventwvr: eseménynapló GUI felület
 msconfig: indítási beállítások kezelése GUI
 cleanmgr: lemezkarbantartó indítása
+
         </pre>
     </section>
     <section>
