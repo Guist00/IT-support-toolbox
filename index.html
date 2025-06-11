@@ -13,10 +13,10 @@
         <h2>🌐 IP cím-logikai és MAC cím-fizikai</h2>
         <pre>
 IP cím (Internet Protocol)-> egy eszköz kapja egy adott hálózaton kommunikációra
-                             IPV4 szabvány 32 bit(4byte)
+                             IPV4 szabvány, 32 bit(4byte)
                              Olyan mint egy házszám és utca neve
             
-MAC cím (Media Access Protocol) -> egyedi azonosító minden hálózati eszközön pl: Hálókártya
+MAC cím (Media Access Control) -> egyedi azonosító minden hálózati eszközön pl: Hálókártya
                                    hossza: 6 byte, az első 3 byte (OUI-gyártó azonosítója) Organizationally Unique Identifier
                                    második 3 byte (eszköz egyedi száma gyártótól)
                                    LSB-Least Significant Bit -> ha 0 unicast páros, ha 1 multicast páratlan
@@ -45,7 +45,7 @@ MAC cím (Media Access Protocol) -> egyedi azonosító minden hálózati eszköz
         <pre>
 Ctrl + Shift + Esc → Feladatkezelő  
 Win + R → Futtatás  
-Win + R cmd → Parancssor  
+Win + R cmd → (Parancssor megnyitása) 
 Win + alt + del → felhasználóváltás
 CMD → cls  (clean screen)
         </pre>
@@ -68,13 +68,13 @@ fájl vagy mappa áthelyezése: move "file elérése" "másik mappa"\
     <section>
      <h2>CMD-ben(Command-line) Hálózati parancsok</h2>
         <pre>
-ipconfig: hálózati tulajdonságok; ipconfig/all: az összes tulajdonság megjelenítése
+ipconfig: hálózati tulajdonságok; ipconfig /all: az összes tulajdonság megjelenítése
 ping: kapcsolat tesztelése pl. ip címek, vagy DNS alapján google: 8.8.8.8
 tracert: útvonal megjelenítése pl: tracert google.com, mutatja, hogy a router mennyi útvonalon éri el az adott célt.
 nslookup: Name Server Lookup - nslookup google.com - milyen IP-n van a google? vagy fordított keresés - ns lookup 8.8.8.8 - melyik domain tartozik az ip-hez?
 nslookup használata: DNS-server tesztelése és hibaelhárítás ha nem tölt be egy weboldal
-ipconfig/release: IP-cím felszabadítása
-ipconfig/renew: új IP-cím kérése a DHCP-től
+ipconfig /release: IP-cím felszabadítása
+ipconfig /renew: új IP-cím kérése a DHCP-től
 net use: hálózati meghajtók csatlakozását, listázását vagy lecsatolását kezeli.
     Pl: net use Z: \\szerver\megosztaso -- hálózati meghajtó csatlakozása
     Pl: net use Z: /delete hálózati -- meghajtó lecsatolása
@@ -88,13 +88,13 @@ sfc/scannow: windows rendszerfájlok ellenőrzése -> ha ez nem tudja megoldani,
 sfc /scannow vagy DISM, akkor kell ha pl: program összeomlás, malware után, hibaüzenetek, fájlok sérülése, áramkimaradás
 chkdsk C: : Meghajtó ellenőrzése, hibajavítás
 tasklist: folyamatok listázása
-taskkil: folyamat leállítása Pl: taskkill /IM notepad.exe / F
+taskkill: folyamat leállítása Pl: taskkill /IM notepad.exe /F
 shutdown: gép leállítása Pl: shutdown /r /t /0
 systeminfo: rendszeradatok
 eventwvr: eseménynapló GUI felület
 msconfig: indítási beállítások kezelése GUI
 cleanmgr: lemezkarbantartó indítása
-WIN + R, majd beírni -> mrt: kártevő eltávolítás
+WIN + R, majd beírni -> mrt: kártevő eltávolító eszköz
 
         </pre>
     </section>
@@ -103,7 +103,7 @@ WIN + R, majd beírni -> mrt: kártevő eltávolítás
         <pre>
 net user: felhasználók listázása
 net user "felhasználó név": részletek adott user-ről
-net user újnév új jelszó / add: új helyi felhasználó létrehozása Pl: net user helpdesk1 jelszo123 /add
+net user újnév új jelszó /add: új helyi felhasználó létrehozása Pl: net user helpdesk1 jelszo123 /add
 net localgroup administrators helpdesk1 /add: adminisztrátori jogosultság adása
         </pre>
     </section>
