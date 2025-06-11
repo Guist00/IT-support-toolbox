@@ -10,7 +10,19 @@
     <p>Egyszerű eszközök és linkek helpdesk és rendszergazdai munkához.</p>
 
     <section>
-        <h2>🌐 IP cím lekérdezése</h2>
+        <h2>🌐 IP cím-logikai és MAC cím-fizikai</h2>
+        <pre>
+IP cím (Internet Protocol)-> egy eszköz kapja egy adott hálózaton kommunikációra
+                             IPV4 szabvány 32 bit(4byte)
+                             Olyan mint egy házszám és utca neve
+            
+MAC cím (Media Access Protocol) -> egyedi azononsító minden hálózati eszközön pl: Hálókártya
+                                   hossza 6 byte, az első 3 byte (OUI-gyártó azonosítója) Organizationally Unique Identifier
+                                   második 3 byte (eszköz egyedi száma gyártótól)
+                                   LSB-Least Significast Bit -> ha 0 unicast páros, ha 1 multicast páratlan
+                                   Unicast: egyetlen postaládának szóló levél
+                                   Multicast: több postaládának szóló egyszerre küldött levél, akiknek szól pl egy adott csoport eszköz
+        </pre>
         <p><a href="https://whatismyipaddress.com/" target="_blank">Mi az IP címem?</a></p>
     </section>
 
