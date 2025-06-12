@@ -128,6 +128,8 @@ cls: képernyő törlése (Clear-Host)
         </pre>
          <h2>Powershell objektumkezelés és szűrés</h2>
         <pre>
+$: változó
+$._ CPU: CPU szűrési feltételre alkalmazott változó
 select-object: csak a kívánt mezőket jeleníti meg
 where-object: szűrési feltétel
 sort-object: rendezés (növekvőbe vagy -descending: csökkenőbe)
@@ -136,6 +138,13 @@ get-process | where-object {$_.CPU -gt 100}: listázza azokat a folyamatokat, am
 get-service | select object name,status: szolgáltatásokból megjeleníti az adott name és status nevű oszlopokat
 get-process | sort-object cpu | select-object -first 5: kilistázza a folyamatokat, majd növekvő sorrendbe rakja az első 5-t
 get-process | sort-object cpu -descending | select-object -first 5: kilistázza a folyamatokat, majd csökkenő sorrendbe rakja az első 5-t
+        </pre>
+    </section>
+    <h2>Powershell fájlkezelés</h2>
+        <pre>
+new-item -path "C:\temp\file.txt" -itemtype file: fájl létrehozása
+"SZÖVEG BÁRMI" | out-file "C:\temp\file.txt": fájlba írás
+get-content "C:\temp\file.txt": fájl olvasása
         </pre>
     </section>
 </body>
