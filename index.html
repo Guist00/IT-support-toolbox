@@ -126,6 +126,8 @@ get-childitem: fájlok és mappák listázása (röviden ls/gci)
 set-location "C:\": könyvtár váltása
 cls: képernyő törlése (Clear-Host)
         </pre>
+    </section>
+    <section>
          <h2>Powershell objektumkezelés és szűrés</h2>
         <pre>
 $: változó
@@ -140,6 +142,7 @@ get-process | sort-object cpu | select-object -first 5: kilistázza a folyamatok
 get-process | sort-object cpu -descending | select-object -first 5: kilistázza a folyamatokat, majd csökkenő sorrendbe rakja az első 5-t
         </pre>
     </section>
+    <section>
     <h2>Powershell fájlkezelés</h2>
         <pre>
 new-item -path "C:\temp\file.txt" -itemtype file: fájl létrehozása
