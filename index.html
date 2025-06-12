@@ -3,11 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title>IT Support Toolbox</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="trycss.css">
 </head>
 <body>
     <h1>🛠️ IT Support Toolbox</h1>
     <p>Egyszerű eszközök és linkek helpdesk és rendszergazdai munkához.</p>
+	<nav class="navbar">
+  <button class="menu-toggle">&#9776;</button> <!-- Hamburger ikon -->
+  <ul class="menu">
+    <li><a href="#cmd">CMD</a></li>
+    <li><a href="#powershell">PowerShell</a></li>
+    <li><a href="#wsl">WSL</a></li>
+    <li><a href="#bash">Bash</a></li>
+  </ul>
+</nav>
+
 <nav>
   <ul class="menu">
     <li><a href="#ip">IP és MAC</a></li>
@@ -162,5 +172,16 @@ new-item -path "C:\temp\file.txt" -itemtype file: fájl létrehozása
 get-content "C:\temp\file.txt": fájl olvasása
         </pre>
     </section>
+	<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const toggle = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
+
+    toggle.addEventListener("click", function () {
+      menu.classList.toggle("active");
+    });
+  });
+</script>
+
 </body>
 </html>
