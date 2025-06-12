@@ -1,27 +1,135 @@
+/* style.css */
+
 body {
-    font-family: Arial, sans-serif;
-    margin: 30px;
-    background-color: #f4f4f4;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f6f8;
     color: #333;
+    line-height: 1.6;
+    margin: 20px;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 h1 {
-    color: #0066cc;
+    font-size: 2.5rem;
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 0.3em;
 }
 
-section {
-    margin-bottom: 25px;
-    padding: 15px;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 0 8px rgba(0,0,0,0.1);
+h2 {
+    font-size: 1.8rem;
+    color: #34495e;
+    margin-top: 2em;
+    border-bottom: 2px solid #2980b9;
+    padding-bottom: 0.3em;
+}
+
+p, ul {
+    font-size: 1rem;
+    margin-top: 0.6em;
 }
 
 a {
-    color: #0077cc;
+    color: #2980b9;
     text-decoration: none;
 }
 
 a:hover {
     text-decoration: underline;
+}
+
+pre {
+    background-color: #2d2d2d;
+    color: #f8f8f2;
+    padding: 15px;
+    border-radius: 6px;
+    overflow-x: auto;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    margin-top: 0.5em;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+ul {
+    padding-left: 1.2em;
+}
+
+section {
+    background: white;
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    margin-bottom: 2em;
+}
+
+@media (max-width: 600px) {
+    body {
+        margin: 10px;
+        padding: 5px;
+    }
+    h1 {
+        font-size: 2rem;
+    }
+    h2 {
+        font-size: 1.4rem;
+    }
+    pre {
+        font-size: 0.85rem;
+    }
+}
+.menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  background-color: #222;
+  justify-content: center;
+  position: fixed;         /* Rögzített pozíció */
+  top: 0;                  /* A képernyő tetején */
+  left: 0;
+  width: 100%;             /* Teljes szélesség */
+  z-index: 1000;           /* Legyen a többi tartalom fölött */
+}
+
+.menu li {
+  margin: 0;
+}
+
+.menu li a {
+  display: block;
+  padding: 14px 20px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.menu li a:hover {
+  background-color: #555;
+}
+
+/* Extra: A tartalom ne legyen a menü alatt */
+body {
+  padding-top: 50px; /* vagy amekkora a menü magassága */
+}
+@media screen and (max-width: 768px) {
+  .menu {
+    flex-direction: column;         /* egymás alá rakja mobilon */
+    align-items: center;            /* középre igazítja */
+  }
+
+  .menu li a {
+    padding: 12px;
+    font-size: 16px;
+    width: 100%;                    /* teljes szélesség, könnyebb kattintani */
+    text-align: center;
+  }
+
+  body {
+    padding-top: 200px;             /* ha menü függőleges, több helyet hagy */
+  }
 }
