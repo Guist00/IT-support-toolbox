@@ -41,18 +41,19 @@ a:hover {
 }
 
 pre {
-    background-color: #2d2d2d;
-    color: #f8f8f2;
-    padding: 15px;
-    border-radius: 6px;
-    overflow-x: auto;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 0.95rem;
-    line-height: 1.4;
-    margin-top: 0.5em;
-    white-space: pre-wrap;
-    word-wrap: break-word;
+  overflow-x: auto;
+  background-color: #2d2d2d;
+  color: #f8f8f2;
+  padding: 15px;
+  border-radius: 6px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  margin-top: 0.5em;
+  white-space: pre-wrap;
+  word-wrap: break-word;
 }
+
 
 ul {
     padding-left: 1.2em;
@@ -133,10 +134,5 @@ body {
     padding-top: 200px;             /* ha menü függőleges, több helyet hagy */
   }
 }
-pre {
-  overflow-x: auto;
-  background-color: #f4f4f4;
-  padding: 10px;
-  border-radius: 5px;
-}
+
 
