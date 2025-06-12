@@ -109,6 +109,33 @@ net user: felhasználók listázása
 net user "felhasználó név": részletek adott user-ről
 net user újnév új jelszó /add: új helyi felhasználó létrehozása Pl: net user helpdesk1 jelszo123 /add
 net localgroup administrators helpdesk1 /add: adminisztrátori jogosultság adása
+net user "felhasználó név" /domain : Felhasználó infóromációk
+gpupdate /force : Szerveren és kliensgépen azonnal GPO (Group Policy Object) parancsba léptetése
+        </pre>
+    </section>
+     <section>
+        <h2>Powershell alap parancsok</h2>
+        <pre>
+get-help: súgó megtekintése
+get-command: elérhető parancsok listázása
+get-process: folyamatok listázása
+get-service: szolgáltatások lekérdezése
+get-date: aktuális dátum és idő
+get-eventlog: -logname System -newest 5: legutóbbi 5 esemény listázása
+get-childitem: fájlok és mappák listázása (röviden ls/gci)
+set-location "C:\": könyvtár váltása
+cls: képernyő törlése (Clear-Host)
+        </pre>
+         <h2>Powershell objektumkezelés és szűrés</h2>
+        <pre>
+select-object: csak a kívánt mezőket jeleníti meg
+where-object: szűrési feltétel
+sort-object: rendezés (növekvőbe vagy -descending: csökkenőbe)
+get-process | where-object {$_.CPU -gt 100}: listázza azokat a folyamatokat, amelyek órajele meghaladja a 100-at
+-gt -> nagyobb / -lt -> kisebb / -eq -> egyenlő / (pipe) |: mint egy cső, amely tovább adja a következő szűrési feltételnek a parancsot
+get-service | select object name,status: szolgáltatásokból megjeleníti az adott name és status nevű oszlopokat
+get-process | sort-object cpu | select-object -first 5: kilistázza a folyamatokat, majd növekvő sorrendbe rakja az első 5-t
+get-process | sort-object cpu -descending | select-object -first 5: kilistázza a folyamatokat, majd csökkenő sorrendbe rakja az első 5-t
         </pre>
     </section>
 </body>
