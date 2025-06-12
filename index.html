@@ -8,8 +8,17 @@
 <body>
     <h1>🛠️ IT Support Toolbox</h1>
     <p>Egyszerű eszközök és linkek helpdesk és rendszergazdai munkához.</p>
+<nav>
+  <ul class="menu">
+    <li><a href="#ip">IP és MAC</a></li>
+    <li><a href="#ping">Ping tesztek</a></li>
+    <li><a href="#cmd">CMD</a></li>
+    <li><a href="#powershell">PowerShell</a></li>
+	<li><a href="#AD">Active Directory</a></li>
+  </ul>
+</nav>
 
-    <section>
+    <section id="ip">
         <h2>🌐 IP cím-logikai és MAC cím-fizikai</h2>
         <pre>
 IP cím (Internet Protocol)-> 
@@ -54,7 +63,7 @@ Ctrl + Alt + Del → felhasználóváltás
 CMD → cls  (clean screen)
         </pre>
     </section>
-    <section>
+    <section id="cmd">
         <h2>🗂️Alapvető Windows CMD parancsok</h2>
         <pre>
 📁Mappa tartalmának a listázása: dir (directory)
@@ -114,7 +123,7 @@ gpupdate /force : Szerveren és kliensgépen azonnal GPO (Group Policy Object) p
         </pre>
     </section>
     
-    <section>
+    <section id="powershell">
         <h2>Powershell alap parancsok</h2>
         <pre>
 get-help: súgó megtekintése
