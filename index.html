@@ -3,31 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <title>IT Support Toolbox</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="trycss.css">
 </head>
 <body>
     <h1>🛠️ IT Support Toolbox</h1>
     <p>Egyszerű eszközök és linkek helpdesk és rendszergazdai munkához.</p>
-	<nav class="navbar">
-  <button class="menu-toggle">&#9776;</button> <!-- Hamburger ikon -->
+<nav class="navbar">
+  <button class="menu-toggle">&#9776;</button>
   <ul class="menu">
+    <li><a href="#ip">IP & MAC</a></li>
+    <li><a href="#windows">Windows</a></li>
+    <li><a href="#winquick">Win commands</a></li>
     <li><a href="#cmd">CMD</a></li>
     <li><a href="#powershell">PowerShell</a></li>
-    <li><a href="#wsl">WSL</a></li>
-    <li><a href="#bash">Bash</a></li>
+    <li><a href="#ad">Active Directory</a></li>
   </ul>
 </nav>
 
-<nav>
-  <ul class="menu">
-    <li><a href="#ip">IP & MAC</a></li>
-    <li><a href="#ping">Ping</a></li>
-    <li><a href="#cmd">CMD</a></li>
-    <li><a href="#winquick">Win commands</a></li>
-    <li><a href="#powershell">PowerShell</a></li>
-    <li><a href="#AD">Active Directory</a></li>
-  </ul>
-</nav>
 
     <section id="ip">
         <h2>🌐 IP cím-logikai és MAC cím-fizikai</h2>
@@ -44,16 +36,59 @@ második 3 byte (eszköz egyedi száma gyártótól)
 LSB-Least Significant Bit -> ha 0 unicast páros, ha 1 multicast páratlan
 Unicast: Egy forrás → egyetlen cél pl: Egy számítógép fájlt küld egy másik gépnek.
 Multicast: Egy forrás → több kiválasztott cél (nem mindenkinek) pl: Egy élő videó streamet néz több felhasználó, akik „feliratkoztak” rá.
-Boadcast: Egy eszköz üzenetet küldd a hálózat többi részének pl: Ha egy gép nem tudja az IP-címhez tartozó MAC-címet, akkor broadcast üzenetet küld:
+Boadcast: Egy eszköz üzenetet küldd a hálózat többi részénel pl: Ha egy gép nem tudja az IP-címhez tartozó MAC-címet, akkor broadcast üzenetet küld:
 „Kié a 192.168.1.12 IP-cím?”
 Ha egy új eszköz csatlakozik a hálózatra, és még nincs IP-címe, akkor broadcast segítségével kér IP-címet a DHCP szervertől.
-        <p><a href="https://whatismyipaddress.com/" target="_blank">Mi az IP címem?</a></p>
+        </pre>
     </section>
 
-    <section>
-        <h2>📶 Internet kapcsolat teszt</h2>
-        <p><a href="https://fast.com" target="_blank">Sebességteszt (Fast.com)</a></p>
-        <p><a href="https://www.speedtest.net/" target="_blank">Speedtest.net</a></p>
+    <section id="windows">
+        <h2>Windows ismeretek</h2>
+        <pre>
+Windows Home: 
+Maximális RAM 128 GB-ig
+Nincs BitLocker, amely a merevlemez titkosításáért felelős pl. laptopoknál, amely bootolás előtt
+kéri a jelszót, előnye: merevlemez lopás elleni védelem, de sok portos eszközön ez a titkosítás engedélyezett
+	
+Windows Pro: 
+Maximális RAM 2 TB-ig
+Több funkció -> magasabb ár:
+Hyper-V: engedélyezi a helyi futtatást a virtuális gépeknek a windows-on, nem szükséges már program
+Remote Desktop: Pro (szerver) Minden más windows-ról(kliensek) lehet távolró irányítani RDC-n (Remote Control Desktop) keresztül
+Késleltetett frissítések a Home verzióhoz képest, amit csak néhány órára lehet állítani
+
+Domain Join: Domain-hoz való csatlakoztatás pl. munkahelyi, amely engedélyezi egy admin számára a hozzáférést a számítógéphez,
+valamint csoport szabályokat alkalmazhat adott gépekre és csatlakozást biztosít más gépekkel adott hálózatban
+
+Group Policy Editor: Engedélyezi az adminoknak a teljes konfigurációt a gépekhez az adott hálózaton, valamint 
+irányítható a csoport szabályokat, amellyek sok tulajdonság állítható be még ha nem is a hálózaton van
+
+Korlátozott hozzáférés: Korlátoz egy gépet vagy egy felhasználót, hogy egy adott alkalmazáson kívül bármit kezeljen 
+pl: bejelentkező szoftver
+
+Internet Explorer IE(Enterprise Mode): Ez egy kompatibilis mód régi vállalati hálózatokhoz, amely még web applikációkat használ az internet explorer 7 és 8 alapján
+Windows Bolt cégeknek: Jobb céges környezetben pl: ha egy szoftver csomagot veszünk, akkor megtudjuk osztani több géppel üzleti applikációs bolt
+
+Windows 10 Pro for Workstation: 
+Maximális RAM 6 TB-ig
+Az alaplapon nem 1, hanem akár már 4 db processzor is lehet
+ReFS (Resilient File System): Elsődleges fájlrendszer, amely néhol leváltja az NTFS-t(New Technology File System)
+
+Windows 10 Enterprise: 
+Könnyedebb licencelési és közvetlen központi admin hozzáférést biztosít
+Domain join, tehát adott hálózati csoporthoz hozzáadható
+
+Windows 10 Education: 
+Egyetemek és iskolák
+Hasonló az Enterprise-hoz
+
+Windows IoT Core: 
+Nagyon alap verzió, amely lehetőleg raspberry PI képes futni, nagyon alacsony energia igényű, csupán csak, hogy egy operációs rendszer legyen az adott készüléken
+
+Windows 10S: 
+Nagyon lezárt rendszer, csupán a windows bolti applikációban található programokat engedi futtatni
+
+		</pre>
     </section>
 
     <section>
@@ -165,14 +200,245 @@ get-process | sort-object cpu -descending | select-object -first 5: kilistázza 
         </pre>
     </section>
     
+	<section>
+	<h2>Változók és programozási elemek</h2>
+	<h4>Változók deklalárása</h4>
+	<pre>
+$nev = "IT szakember" -> string (szöveg)
+$szam = 42 -> int(integer)
+$igaz = $true -> bool (logikai)
+$lista = @(1,2,3,4) -> tömb (array)
+	</pre>
+	
+	<h4>Feltételes elágazás</h4>
+	<pre>
+if ($szam -gt10) 
+{Write-Output "Nagyobb, mint 10"} 
+else {Write-Output "10 vagy kisebb"}
+	</pre>
+
+<h4>Ciklus</h4>
+	<pre>
+foreach ($elem in $lista) {Write-Output $elem}
+	</pre>
+	
+<h4>Függvény deffiniálása</h4>
+	<pre>
+function koszontes($nev, $kor) {Write-Output "Neve: $nev, kor: $kor"}
+koszontes pl: sorrendben a function belül pl: András 28
+	</pre>
+	</section>
+	
     <section>
     <h2>Powershell fájlkezelés</h2>
+	<h4>Fájl létrehozása, írása, olvasása & mappa létrehozása</h4>
         <pre>
+new-item -path "C:\temp\ujmappa" -itemtype directory : új mappa létrehozása
 new-item -path "C:\temp\file.txt" -itemtype file: fájl létrehozása
 "SZÖVEG BÁRMI" | out-file "C:\temp\file.txt": fájlba írás
 get-content "C:\temp\file.txt": fájl olvasása
+"Új tartalom" | set-content "C:\temp\file.txt" : fájl felülírása
+"Új sor" | add-content "C:\temp\file.txt" : új sor hozzáfűzése
+copy-item "C:\temp\file.txt" "C:\temp\backup\file.txt" : fájl másolása
+move-item "C:\temp\file.txt" "C:\archiv\file.txt" : fájl áthelyezése
+remove-item "C:\temp\file.txt" : fájl törlése
+get-childitem -path "C:\temp" -filter*.txt -recurse : fájl keresése rekurzívan (minden mappa szinten keresi)
         </pre>
     </section>
+	
+	<section>
+    <h2>Rendszer- és hálózati információk lekérdezése</h2>
+	<h4>Eseménynapló & hálózati parancsok</h4>
+        <pre>
+get-eventlog -logname system -newest 10 : eseménynapló utolsó 10 bejegyzése
+get-netipaddress : hálózati címek megjelenítése
+test-connection google.com -count 4 : ping teszt kapcsolat
+        </pre>
+    </section>
+	
+	<section>
+    <h2>Automatikus feladatok & scriptek futtatása</h2>
+	<h4>Powershell script futtatási szabályzat</h4>
+        <pre>
+set-executionpolicy remotesigned :
+csak azokat a scripteket kell aláírni(digitálisan), amelyek egy másik számítógépről származnak
+vagyis saját gépen létrehozott .ps1(powershell fájl kiterjesztés) gond nélkül futtat, más számítógépről letöltött scripteket,
+viszont kell aláírás vagy blokkolást kell eltávólítani róluk:  
+-> jobb klikk -> tulajdonságok -> letiltás feloldása
+
+set-executionpolicy remotesigned -scope currentuser -force : 
+Remotegisned: engedi a helyi scriptek futtatását, de az internetről letöltötteket aláíráshoz köti
+scope currentuser: csak az aktuális felhasználóra vonatkozik (nincs szükség rendszergazdai jogra)
+force : kikapcsol minden megerősítő kérdést
+vagy
+powershell rendszergazdai Futtatás
+set-executionpolicy remotesigned -scope localmachine -force
+        </pre>
+    </section>
+	
+	<section>
+  
+	<h4>Paraméteres függvénypélda</h4>
+        <pre>
+param (
+	[string]$felhasznalonev
+)
+write-output "Üdv, $felhasznalonev"
+
+Ezt egy .ps1 pl: udvozlet néven elmenteni és fájlban beállítani UTF8-BOM  notepad-ban
+powershellben: 
+.\udvozlet.ps1 -felhasznalonev Istvan
+
+param(...) : script vagy függvény külső bemenetet vagy paramétert fogad
+[string]$felhasznalonev : egy szöveges változó, amit futtatáskor adtatunk meg
+write-output : kiírja az üdvözlő üzenetet a megadott névvel
+
+.ps1: 
+egy külön fájl
+param(...) a fájl elején
+futtatáskor egyszer lefut
+
+
+Ugyanez függvényként: 
+nem szükséges külön .ps1 fájl
+param(...) a függvény belsejében van
+csak meghíváskor fut, de többször újrahasználható kódrész
+
+pl: 
+
+function Udvozles{
+param (
+[string]$felhasznalonev
+)
+Write-output "Üdv, $felhasznalonev"
+}
+udvozles -felhasznalonev "Pisti"
+        </pre>
+    </section>
+	
+	<section>
+	<h4>Hibakezelés</h4>
+	<pre>
+try {
+	get-item "C:\nemletezofile.txt" -erroraction stop
+}
+catch {
+	write-output "Hiba történt: $_"
+}
+
+A powershell nem lép a catch ágba, mivel alapból nem kezeli az összes hibát termináló hibaként és a try-catch 
+csak termináló hibákat tud elkapni, ezért szükséges az -erroraction stop, amely megmondja a get-item parancsnak, hogy termináló hibát dobjon, 
+ha nem találja a fájlt, így a try-catch blokkba kerül a hiba
+	</pre>
+	</section>
+	
+	<section>
+	<h4>Naplózás fájlba</h4>
+	<pre>
+"Script futott: $(get-date)" | out-file "C:\temp.log.txt" -append
+
+"script futott: $(get-date)" : egy szöveg, amiben elmenti a dátumot és az időt pl. script futott: 2025.05.10 15:21:30
+| pipe: átadja a szöveget a következő out-file parancsnak
+out-file "C:\temp\log.txt" - append: ezt a szöveget a "C:\temp\log.txt" fájlba írja hozzáfűzve
+	</pre>
+	</section>
+	
+	<section>
+	<h4>Haladó szűrés és adatfeldolgozás</h4>
+	<pre>
+Több objektum összekapcsolása, adatfájlok kezelése (CSV, JSON)
+CSV: 
+$felhasznalok = import-csv -path "C:\adatok\felhasznalok.csv" -> felhasznalok változóba beolvassa az adatokat a csv-ből
+$aktivak = $felhasznalok | where-object {$_.Aktivak -eq "True"} -> aktivak változóba beolvassa az adatokat, majd szűri csak az aktiv felhasznalókat
+$aktivak -> kiírja az aktív felhasználókat
+$aktivak | export-csv -path "C:\adatok\aktivfelhasznalok.csv" -notypeinformation -> az aktív tagokat egy új fájlba menti új névvel
+
+JSON: 
+$beallitasok = get-content "C:\adatok\beallitasok.json" | convertform-json -> beolvassa a beallitasok változóba az adatokat, majd konvertálja objektummá
+$aktivszerverek = $beallitasok | where-object {$_.Statusz -eq "Aktív"} -> aktivszerverek változóba szűrt feltételt alkalmaz csak aktiv szerverekre
+$aktivszerverek -> kiírás
+$aktivszerverek | convertto-json -depth 10 | set-content "C:\adatok\aktivszerverek.json" -> json-ba exporták (visszementés)
+	</pre>
+	</section>
+	
+	<section>
+	<h4>REST API PowerShellben</h4>
+	<pre>
+Rendszerek automatizálása főleg felhőben pl. Microsoft 365, Azure, GitHub, Jira, ServiceNow
+Olyan szolgáltatások, amik API-n érhetőek el
+REST API:  Representional State Transfter Application Programming Interface
+REST: egy architekturális stílus, amit webes szolgáltatások (API-k) építésére használnak
+API: szabályrendszer, amint keresztül aa programok kommunikálhatnak egymással
+Olyan szoftverarchitektúra stílus, amely lehetővé teszi a kommunikációt számítógépes rendszerek között interneten pl. webes szolgáltatások
+Alapvető funkciója ugyanaz, mint az internet böngészése, ügyfél API használatával lép kapcsolatba a szerverrel, mikor erőforrásra van szüksége
+Emiatt HTTP protokollt használ, ami ugyanaz az alap, mint a böngészők és használnak 
+HTTP metódusok: 
+GET -> lekérés - adatok lekérése
+POST -> létrehozás - új adat létrehozása
+PUT -> módosítás - teljes adat frissítése
+PATCH -> részleges módosítás - egy mező módosítása
+DELETE -> törlés - adat törlése 
+
+fogalmak: 
+Endpoint -> Az URL(Uniform Resource Locator), ahová a kérés megy pl. https://api.example.com/users
+Resourse -> Az erőforrás pl. felhasználó, gép, fájl
+Headers -> Kiegészítő infó a kéréshez pl. típus, jogosultság
+Body -> Az elküldött adat pl. JSON formátumban
+Status code -> A szerver válasza pl. 200 OK, 401 unauthorized, 404 not found
+
+PowerShellben:
+$response = invoke-restmethod -uri "https://jsonplaceholder.typicode.com/users" -method GET   : 1sor
+$response
+elemzés:
+invoke-restmethod -> HTTP kérést küld az API végpontra
+Uri -> megadja a cél URL-t, ahonnan adatot szeretnénk
+method get -> HHTP GET metódust használ, tehát lekéri az adatokat
+Eredmény JSON válasz, amit a powershell automatikusan objektumá alakít, mindezt a $response változóba
+
+
+$response | export-csv "C:\temp\users.csv" -notypeinformation  : 2 sor
+elemzés: 
+A $response tartalmát(PowerShell) obejktumokat CSV formátumban elmenti egy fájlba
+export-csv -> csv fájlba exportál
+"C:\temo\users.csv" -> ide kerül a mentett fájl
+notypeinformation -> elhagyja al első sorban a powershell objektumtípus leírását (tisztább fájl)
+
+$response | conertto-json -depth 3 | out-file "C:\temp\users.json"
+elemzés:
+convertto-json -> a powershell objektumokat ismért json szöveggé alakítja
+depth 3: meghatározza, hogy milyen mélyen bontsa ki az adott objektumokat // alapértelmezett a 2 
+out-file -> elmenti a kimenetet a fájlba
+"C:\temp\users.json" -> létrejön a fájl
+
+
+pl: depth, amely PowerShellben alapértelmezetten mindig depth 2
+
+{
+  "name": "Leanne",
+  "address": {
+    "city": "Gwenborough",
+    "geo": {
+      "lat": "-37.31"
+    }
+  }
+}
+
+A kapcsos zárójel jelzi a mappa depth-et, itt pl: egy depth 3 szükséges
+address és a geo is egy objektum, amelyben vannak több elemek és csv-be mentve nem bontódnak fel megfelelően pl oszlopokra, hanem 
+az egész objektum szerkezete lesz az oszlop (string), ami nem jól használható excelben -> nem lehet szűrni, módosítani, keresni az adatokat
+pl: 
+		company 											address
+@{name=Yost and Sons; catchPhrase=Switchable contextually-based project}	@{street=Dayna Park; city=Bartholomebury; zipcode=76495-3109}
+
+Megoldás a laposítás, majd a visszalakítás JSON-be
+JSON-be alakítás, mivel ha egy másik alkalmazás vagy API az eredeti hierarchikus struktúrát szeretné kapni, vissza kell 
+állítani a beágyazott objektumokat pl. address és company újra objektumként jelenik meg
+
+
+
+	</pre>
+	</section>
+	
 	<script>
   document.addEventListener("DOMContentLoaded", function () {
     const toggle = document.querySelector(".menu-toggle");
