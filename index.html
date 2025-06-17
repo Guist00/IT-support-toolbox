@@ -13,7 +13,7 @@
   <ul class="menu">
     <li><a href="#ip">IP & MAC</a></li>
     <li><a href="#windows">Windows</a></li>
-    <li><a href="#winquick">Win commands</a></li>
+    <li><a href="#cat">CAT</a></li>
     <li><a href="#cmd">CMD</a></li>
     <li><a href="#powershell">PowerShell</a></li>
     <li><a href="#ad">Active Directory</a></li>
@@ -90,16 +90,8 @@ Nagyon lezárt rendszer, csupán a windows bolti applikációban található pro
 
 		</pre>
     </section>
-
-    <section>
-        <h2>🛜 Ping teszt linkek</h2>
-        <ul>
-            <li><a href="https://ping.eu/ping/" target="_blank">Ping eszköz (ping.eu)</a></li>
-            <li><a href="https://tools.keycdn.com/ping" target="_blank">Ping teszt (KeyCDN)</a></li>
-        </ul>
-    </section>
-
-    <section id="winquick">
+	
+	  <section>
         <h2>🖥️ Windows gyors parancsok</h2>
         <pre>
 Ctrl + Shift + Esc → Feladatkezelő  
@@ -109,6 +101,61 @@ Ctrl + Alt + Del → felhasználóváltás
 CMD → cls  (clean screen)
         </pre>
     </section>
+
+    <section id="cat">
+        <h2>CAT kábelek</h2>
+		<pre>
+CAT: Kategóriás kábelek(Category Cables) Ethernet Hálózatok vezetékes átviteli közegét képezik
+
+Több katergória különböző sávszélességgel és átviteli sebességgel:
+
+Kategória		Max. sebesség 			   Max.frekvencia		Max.hossz		Árnyékolás
+
+CAT5			 100 Mbps				100 MHz			100 m			Nem kötelező
+
+CAT5e			 1 Gbps					100 MHz			100 m			Nem kötelező	
+
+CAT6			 1 Gbps (55m-ig 10 Gbps) 	        250 MHz			55-100 m		Gyakori
+
+CAT6a			 10 Gbps			        500 MHz			100 m 			van	
+
+CAT7 			 10 Gbps				600 MHz			100 m			Teljes SFTP
+
+CAT8			 25-40 Gbps				2000 MHz		30 m 			Teljes SFTP
+
+
+2025-ben minimum CAT6 vagy CAT 6a javasolt, mivel a CAT5e elavulóban van
+
+Sávszélesség (bandwidth): Mutatja, hogy egy kábel mekkora adatátviteli mennyiséget képes kezelni egy adott idő alatt
+pl: 250 MHz-250 millió jelet képes feldolgozni másodpercenként  -> nagyobb maximális sebesség, mivel több adat tud párhuzamosan áthaladni
+
+Frekvencia: Hányszor rezeg egy jel másodpercentként, minél nagyobb, annál több adatot tudunk egy adott idó alatt továbbítani
+nagyobb adatsebesség és gyorsabb válaszídő -> (latency) milyen gyorsan tud változni a jel
+
+Sebesség: a tényleg adatátviteli sebességet jelöli
+
+Árnyékolás (EMI védelem): Az elektromos zaj -> EMI (Elektromágneses interferencia) zaravrhatja a jeleket, ezért az árnyékolás ezt csökkenti
+
+UTP (Unshielded Twisted Pair): Árnyákolatlan, legelterjedtebb, olcsó, irodai környezetben használatos
+FTP (Foiled Twisted Pair): Egy külcső fólia árnyékolja a teljes kábelt
+STP (Shielded Twisted Pair): Minden érpár külön árnyákolt lehet + külső árnyékolás
+S/FTP (Shielded/Foiled Twisted Pair): Minden érpár külön árnyékolva, plusz külső fólia magas EMI-védelem
+
+Színkiosztás T568A (Közintézmények,kormányzati helyet) és T568B (céges, otthoni rendszerek) szabvány 8 vezeték:
+
+A: 1. Fehér-zöld 2.Zöld 3.Fehér-narancs 4.Kék 5.Fehér.kék 6.Narancs 7.Fehér-barna 8.barna
+
+B: 1. Fehér-narancs 2.Narancs 3.Fehér-zöld 4.Kék 5.Fehér-kék 6.Zöld 7.Fehér-barna 8.Barna
+
+Parch kábel: mindkét vég ugyanaz (A-A vagy B-B), akkor egyenes (Straight-through) kábel lesz -> switchhez, routerhez
+
+Ha a két vég eltérő pl: (A-B), akkor kereszt (crossover) lesz gép-gép összekötéséhez, ami ma már ritka 
+
+
+
+		</pre>
+    </section>
+
     <section id="cmd">
         <h2>🗂️Alapvető Windows CMD parancsok</h2>
         <pre>
