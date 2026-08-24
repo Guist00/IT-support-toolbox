@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ws<!DOCTYPE html>
 <html lang="hu">
 <head>
     <meta charset="UTF-8">
@@ -147,11 +147,14 @@ A: 1. Fehér-zöld 2.Zöld 3.Fehér-narancs 4.Kék 5.Fehér.kék 6.Narancs 7.Feh
 
 B: 1. Fehér-narancs 2.Narancs 3.Fehér-zöld 4.Kék 5.Fehér-kék 6.Zöld 7.Fehér-barna 8.Barna
 
-Parch kábel: mindkét vég ugyanaz (A-A vagy B-B), akkor egyenes (Straight-through) kábel lesz -> switchhez, routerhez
+Patch kábel: mindkét vég ugyanaz (A-A vagy B-B), akkor egyenes (Straight-through PC-Switch) kábel lesz -> switchez, routerhez
 
-Ha a két vég eltérő pl: (A-B), akkor kereszt (crossover) lesz gép-gép összekötéséhez, ami ma már ritka 
+Ha a két vég eltérő pl: (A-B), akkor kereszt (crossover PC-PC / Switch - Switch) lesz gép-gép összekötéséhez, ami ma már ritka, 
+mivel már van olyan szoftveres technológia (MDI/MDIX), amely képes autómatikusan felismerni a kábel bekötést és módosítani azt,
+így elég csupán egyenes (straight-through-ban bekötni). 
 
-
+MDI/MDIX: A hálózati kártyán lévő port letapogatja a kábel ereit és ha azt látja, hogy a kábel egyenes, de két azonos eszközt kötöttél rá,
+akkor a chip megcseréli az adó és a vevő pin-eket (lábakat). -> Így teljesen mindegy a bekötés.
 
 		</pre>
     </section>
