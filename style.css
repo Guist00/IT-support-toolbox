@@ -192,6 +192,48 @@ details summary {
   cursor: pointer;
 }
 
+/* A külső doboz, ami megakadályozza, hogy túlcsússzon vagy elmozduljon */
+.biztonsagos-keret {
+    max-width: 100%;
+    overflow-x: auto; /* Ha apró képernyő van, mobiln nézetben finoman elgörgethető, de nem töri szét az oldalt */
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Lágy, esztétikus árnyék */
+    margin: 20px auto;
+    font-family: Arial, sans-serif;
+}
+
+/* Maga a táblázat rögzített algoritmusa - EZ GÁtolja MEG, HOGY UGRÁLJON A TARTALOMTÓL FÜGGŐEN */
+.stilusos-tabla {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed; /* Lényeges: rögzíti az oszlopszélességeket, nem hagyja ugrálni a szöveget */
+}
+
+/* Cella testreszabások a szép megjelenésért */
+.stilusos-tabla th, 
+.stilusos-tabla td {
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid #eaeaea;
+    word-wrap: break-word; /* Hosszú szó esetén sem törik szét a dizájn */
+}
+
+/* Fejléc esztétika */
+.stilusos-tabla th {
+    background-color: #f8f9fa;
+    color: #333;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* Sorok finom váltakozó színe vagy hover effektek */
+.stilusos-tabla tbody tr:hover {
+    background-color: #f1f4f9; /* Ha fölé megy az egér, finoman visszajelez */
+    transition: background-color 0.2s ease;
+}
+
 details[open] {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
